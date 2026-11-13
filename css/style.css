@@ -951,3 +951,49 @@ body {
     }
 
 }
+
+
+
+
+/* =====================================
+   MOBILE MENU LOGIN FIX
+===================================== */
+
+/* Hide mobile login on desktop */
+.mobile-menu-login {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* Hide desktop login on mobile */
+    .stackly-nav-right .stackly-login-btn {
+        display: none !important;
+    }
+
+    /* Login inside hamburger menu */
+    .mobile-menu-login {
+        display: block !important;
+        width: 100%;
+        margin-top: 12px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(128, 105, 78, .25);
+        text-align: center;
+    }
+
+    .mobile-menu-login a {
+        display: inline-block;
+        padding: 12px 35px;
+        background: #80694e;
+        color: #fff !important;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 3px;
+    }
+
+    .mobile-menu-login a:hover {
+        background: #604d38;
+    }
+
+}
