@@ -1,0 +1,298 @@
+
+/* =========================================
+   STACKLY FASHION BOUTIQUE - 404 PAGE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f5eee5;
+    color: #402a1c;
+}
+
+.fashion-404-page {
+    min-height: 100vh;
+    width: 100%;
+    padding: 35px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* MAIN CARD */
+
+.fashion-404-card {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    padding: 35px 45px 30px;
+    text-align: center;
+    background: #80694e;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 24px;
+    box-shadow: 0 20px 55px rgba(64,42,28,.13);
+}
+
+/* LOGO */
+
+.error-logo {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.error-logo img {
+    display: block;
+    width: 145px;
+    max-height: 48px;
+    object-fit: contain;
+}
+
+/* 404 NUMBER */
+
+.error-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: rgba(255,255,255,.19);
+    font-size: clamp(85px, 13vw, 125px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 5px 0 12px;
+}
+
+.error-home-icon {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    color: #f5eee5;
+    background: rgba(255,255,255,.08);
+}
+
+.error-home-icon .material-symbols-outlined {
+    font-size: 42px;
+}
+
+/* EYEBROW */
+
+.error-eyebrow {
+    display: inline-block;
+    padding: 8px 17px;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 30px;
+    color: #eee5da;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+/* HEADING */
+
+.fashion-404-card h1 {
+    color: #fffaf2;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 15px;
+}
+
+.fashion-404-card h1 span {
+    display: block;
+    color: #e8dfc8;
+    font-style: italic;
+}
+
+/* DESCRIPTION */
+
+.error-description {
+    max-width: 440px;
+    margin: 0 auto 25px;
+    color: #f0e8dd;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* BUTTONS */
+
+.error-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.error-home-btn,
+.error-back-btn {
+    min-width: 135px;
+    height: 43px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.error-home-btn {
+    background: #e7e7ce;
+    border: 1px solid #e7e7ce;
+    color: #402a1c;
+}
+
+.error-home-btn:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+.error-back-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.65);
+    color: #fff;
+}
+
+.error-back-btn:hover {
+    background: #fff;
+    color: #402a1c;
+}
+
+/* ERROR CODE */
+
+.error-code {
+    margin-top: 25px;
+    color: #d7c9b7;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.error-code strong {
+    color: #fff;
+}
+
+/* FOOTER TEXT */
+
+.error-footer-text {
+    margin-top: 20px;
+    color: #80694e;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .fashion-404-page {
+        padding: 25px 17px;
+    }
+
+    .fashion-404-card {
+        max-width: 420px;
+        padding: 30px 22px 25px;
+        border-radius: 18px;
+    }
+
+    .error-logo img {
+        width: 125px;
+    }
+
+    .error-number {
+        font-size: 88px;
+        gap: 3px;
+        margin: 10px 0;
+    }
+
+    .error-home-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    .error-home-icon .material-symbols-outlined {
+        font-size: 33px;
+    }
+
+    .error-eyebrow {
+        font-size: 8px;
+        padding: 7px 13px;
+        letter-spacing: 1.5px;
+    }
+
+    .fashion-404-card h1 {
+        font-size: 37px;
+    }
+
+    .error-description {
+        font-size: 12px;
+        line-height: 1.8;
+        margin-bottom: 22px;
+    }
+
+    .error-buttons {
+        gap: 9px;
+    }
+
+    .error-home-btn,
+    .error-back-btn {
+        min-width: 0;
+        flex: 1;
+        max-width: 145px;
+        height: 42px;
+        font-size: 11px;
+    }
+
+    .error-code {
+        margin-top: 22px;
+    }
+
+    .error-footer-text {
+        font-size: 17px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+
+    .fashion-404-card {
+        padding: 26px 17px 22px;
+    }
+
+    .fashion-404-card h1 {
+        font-size: 32px;
+    }
+
+    .error-number {
+        font-size: 76px;
+    }
+
+    .error-home-icon {
+        width: 57px;
+        height: 57px;
+    }
+
+    .error-home-btn,
+    .error-back-btn {
+        font-size: 10px;
+    }
+
+}

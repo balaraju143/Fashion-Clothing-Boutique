@@ -1,0 +1,953 @@
+
+/* =========================================
+   STACKLY FASHION - NAVBAR
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #ffffff;
+    color: #171717;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.stackly-header {
+    width: 100%;
+    height: 85px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.stackly-navbar {
+    width: 100%;
+    height: 100%;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.stackly-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    z-index: 10002;
+}
+
+.stackly-logo img {
+    width: 185px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.stackly-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    list-style: none;
+}
+
+.stackly-nav-links li a {
+    position: relative;
+    color: #242424;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.stackly-nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -8px;
+    background:rgba(5, 4, 4, 0.629);
+    transition: width 0.3s ease;
+}
+
+.stackly-nav-links li a:hover,
+.stackly-nav-links li a.active {
+    color: #80694e;
+}
+
+.stackly-nav-links li a:hover::after,
+.stackly-nav-links li a.active::after {
+    width: 100%;
+}
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.stackly-nav-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.stackly-login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    padding: 13px 25px;
+    background:#80694e;
+    color: #17200b;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.stackly-login-btn span {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.stackly-login-btn:hover {
+    background: #1d2417;
+    color: #ffffff;
+}
+
+.stackly-login-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.stackly-menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    z-index: 10002;
+}
+
+.stackly-menu-toggle span {
+    width: 26px;
+    height: 2px;
+    background: #171717;
+    border-radius: 5px;
+    transition: all 0.35s ease;
+}
+
+/* Hamburger animation */
+
+.stackly-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.stackly-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.stackly-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   EMPTY HOMEPAGE PLACEHOLDER
+========================================= */
+
+.home-placeholder {
+    min-height: 100vh;
+    padding-top: 85px;
+}
+
+/* =========================================
+   TABLET VIEW
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .stackly-navbar {
+        padding: 0 4%;
+    }
+
+    .stackly-nav-links {
+        gap: 20px;
+    }
+
+    .stackly-nav-links li a {
+        font-size: 13px;
+    }
+
+    .stackly-logo img {
+        width: 130px;
+    }
+
+    .stackly-login-btn {
+        padding: 12px 18px;
+    }
+
+}
+
+/* =========================================
+   MOBILE VIEW
+========================================= */
+
+@media (max-width: 768px) {
+
+    .stackly-header {
+        height: 72px;
+    }
+
+    .stackly-navbar {
+        padding: 0 5%;
+    }
+
+    .stackly-logo img {
+        width: 155px;
+        height: 60px;
+    }
+
+    /* Hide desktop login */
+    .stackly-nav-right {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .stackly-menu-toggle {
+        display: flex;
+    }
+
+    /* Full viewport mobile menu */
+
+    .stackly-nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+
+        background: #ffffff;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 29px;
+        padding: 85px 20px 30px;
+
+        list-style: none;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.35s ease,
+            visibility 0.35s ease,
+            transform 0.35s ease;
+
+        z-index: 10000;
+    }
+
+    .stackly-nav-links.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .stackly-nav-links li a {
+        font-size: 21px;
+        font-weight: 600;
+        color: #171717;
+    }
+
+    .stackly-nav-links li a::after {
+        bottom: -6px;
+    }
+
+    .home-placeholder {
+        padding-top: 72px;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .stackly-logo img {
+        width: 150px;
+    }
+
+    .stackly-nav-links {
+        gap: 25px;
+    }
+
+    .stackly-nav-links li a {
+        font-size: 19px;
+    }
+
+}
+
+
+
+
+/* =========================================
+   STACKLY FASHION FOOTER
+========================================= */
+
+.stackly-fashion-footer {
+    width: 100%;
+    background: #80694e;
+    color: #fff;
+    padding: 65px 4% 25px;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+/* TOP FOOTER */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 35px;
+}
+
+.footer-top h2 {
+    max-width: 570px;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(42px, 5.5vw, 66px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.footer-top h2 span {
+    display: block;
+}
+
+.footer-top p {
+    max-width: 420px;
+    color: #eee5da;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* DIVIDER */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.65);
+}
+
+/* MAIN FOOTER */
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr .7fr .9fr 1.1fr;
+    gap: 45px;
+    padding: 42px 0 45px;
+}
+
+/* BRAND */
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    display: block;
+    width: 175px;
+    max-height: 65px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.footer-brand > p {
+    max-width: 280px;
+    color: #eee5da;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* SOCIAL ICONS */
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.footer-socials a {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f7f2eb;
+    color: #402a1c;
+    font-size: 17px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.footer-socials a:hover {
+    background: #402a1c;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+/* FOOTER COLUMNS */
+
+.footer-column h3 {
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul a {
+    color: #eee5da;
+    font-size: 15px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.footer-column ul a:hover {
+    color: #fff;
+    padding-left: 4px;
+}
+
+/* CONTACT DETAILS */
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.footer-contact-item .material-symbols-outlined {
+    color: #e8cba6;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.footer-contact-item p,
+.footer-contact-item a {
+    color: #eee5da;
+    font-size: 14px;
+    line-height: 1.8;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.footer-contact-item a:hover {
+    color: #fff;
+}
+
+/* BOTTOM FOOTER */
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,.45);
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    color: #eee5da;
+    font-size: 12px;
+    margin: 0;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer-legal-links a {
+    color: #eee5da;
+    font-size: 12px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-top {
+        gap: 25px;
+    }
+
+}
+
+
+/* =========================================
+   STACKLY FOOTER - MOBILE ALIGNMENT FIX
+   All sections centered, one below another
+========================================= */
+
+@media (max-width: 600px) {
+
+    .stackly-fashion-footer {
+        width: 100%;
+        padding: 45px 22px 25px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    /* TOP CONTENT */
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding-bottom: 28px;
+    }
+
+    .footer-top h2 {
+        width: 100%;
+        font-size: 39px;
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    .footer-top p {
+        max-width: 330px;
+        margin: 0 auto;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    /* MAIN FOOTER - SINGLE COLUMN */
+    .footer-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        padding: 35px 0;
+        text-align: center;
+    }
+
+    /* BRAND */
+    .footer-brand {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 17px;
+    }
+
+    .footer-logo img {
+        width: 140px;
+        margin: 0 auto;
+        object-position: center;
+    }
+
+    .footer-brand > p {
+        max-width: 300px;
+        margin: 0 auto 20px;
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    /* SOCIAL ICONS */
+    .footer-socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .footer-socials a {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    /* LINKS AND HELP */
+    .footer-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 11px;
+    }
+
+    .footer-column ul li {
+        margin: 0;
+    }
+
+    .footer-column ul a {
+        font-size: 13px;
+    }
+
+    /* CONTACT */
+    .footer-contact {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-contact-item {
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        margin-bottom: 18px;
+    }
+
+    .footer-contact-item .material-symbols-outlined {
+        font-size: 22px;
+    }
+
+    .footer-contact-item p,
+    .footer-contact-item a {
+        font-size: 12px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    /* BOTTOM COPYRIGHT */
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        text-align: center;
+        padding-top: 22px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .footer-legal-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer-legal-links a {
+        font-size: 12px;
+    }
+
+}
+
+/* SMALL MOBILE */
+@media (max-width: 380px) {
+
+    .stackly-fashion-footer {
+        padding: 38px 16px 22px;
+    }
+
+    .footer-top h2 {
+        font-size: 34px;
+    }
+
+    .footer-main {
+        gap: 28px;
+    }
+
+    .footer-logo img {
+        width: 125px;
+    }
+
+    .footer-column h3 {
+        font-size: 23px;
+    }
+
+    .footer-column ul a {
+        font-size: 12px;
+    }
+
+    .footer-socials a {
+        width: 38px;
+        height: 38px;
+    }
+
+}
+
+/* REMOVE OLD FLOATING BUTTONS ON MOBILE
+   Navbar icons remain available */
+@media (max-width: 600px) {
+
+    .stackly-floating-wishlist,
+    .stackly-floating-cart {
+        display: block !important;
+    }
+
+}
+
+
+/* =========================================
+   STACKLY PREMIUM FASHION LOADER
+========================================= */
+
+.stackly-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5eee5;
+    transition: opacity .55s ease, visibility .55s ease;
+}
+
+.stackly-loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* LOGO */
+
+.loader-logo {
+    margin-bottom: 28px;
+    animation: loaderLogoReveal .8s ease both;
+}
+
+.loader-logo img {
+    width: 145px;
+    height: 55px;
+    object-fit: contain;
+}
+
+/* CIRCLE ANIMATION */
+
+.loader-circle {
+    position: relative;
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c5b398;
+    border-radius: 50%;
+    animation: loaderRotate 3s linear infinite;
+}
+
+.loader-circle::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border: 2px solid transparent;
+    border-top-color: #80694e;
+    border-radius: 50%;
+    animation: loaderRotate 1.4s linear infinite;
+}
+
+.loader-circle-inner {
+    position: absolute;
+    width: 61px;
+    height: 61px;
+    border: 1px solid #d6c5ac;
+    border-radius: 50%;
+}
+
+.loader-circle .material-symbols-outlined {
+    font-size: 34px;
+    color: #80694e;
+}
+
+/* LOADER TEXT */
+
+.loader-content h2 {
+    margin-top: 24px;
+    color: #402a1c;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.loader-content p {
+    margin-top: 7px;
+    color: #80694e;
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* PROGRESS BAR */
+
+.loader-progress {
+    width: 150px;
+    height: 2px;
+    margin-top: 25px;
+    background: #ded2c1;
+    overflow: hidden;
+}
+
+.loader-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #80694e;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: loaderProgress 1.8s ease forwards;
+}
+
+/* ANIMATIONS */
+
+@keyframes loaderRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loaderProgress {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes loaderLogoReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .loader-logo img {
+        width: 125px;
+    }
+
+    .loader-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    .loader-content h2 {
+        font-size: 24px;
+    }
+
+}
