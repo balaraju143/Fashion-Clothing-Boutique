@@ -1162,7 +1162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.setItem("stacklyNewsletterReset", "true");
 
         /* Redirect to 404 page */
-        window.location.href = "404.html";
+        window.location.href = "404-page.html";
 
     });
 
